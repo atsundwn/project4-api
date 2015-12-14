@@ -30,11 +30,13 @@ ActiveRecord::Schema.define(version: 20151214145318) do
     t.string   "email",           null: false
     t.string   "token",           null: false
     t.string   "password_digest", null: false
+    t.string   "phone_num",       null: false
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["phone_num"], name: "index_users_on_phone_num", unique: true, using: :btree
   add_index "users", ["token"], name: "index_users_on_token", unique: true, using: :btree
 
   add_foreign_key "reminders", "users"
