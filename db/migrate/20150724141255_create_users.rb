@@ -5,7 +5,10 @@ class CreateUsers < ActiveRecord::Migration
       t.string :email, null: false, index: { unique: true }
       t.string :token, null: false, index: { unique: true }
       t.string :password_digest, null: false
-      t.string :phone_num, null: false, index: { unique: true }
+      t.string :phone_number, null: false, index: { unique: true }
+      t.string :country_code
+      t.string :authy_id
+      t.integer :authy_status, default: 0, null: false
 
       t.timestamps null: false
     end

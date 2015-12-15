@@ -21,6 +21,12 @@ gem 'bcrypt', '~> 3.1.7'
 # Help with JSON serialization
 gem 'active_model_serializers'
 
+# Use Authy
+gem 'authy'
+
+# Use Twilio
+gem 'twilio-ruby', '~> 4.2.1'
+
 group :development do
   # Use pry over irb for rails console
   gem 'pry-rails'

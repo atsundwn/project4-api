@@ -35,7 +35,10 @@ class AuthController < ApplicationController
 
   def credentials
     params.require(:credentials).permit(:email,
-                                        :phone_num,
+                                        :phone_number,
+                                        :country_code,
+                                        :authy_id,
+                                        :authy_status,
                                         :password,
                                         :password_confirmation)
   end
