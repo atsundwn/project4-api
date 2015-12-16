@@ -3,9 +3,12 @@ class RemindersController < OpenReadController
   before_action :set_reminder, only: [:update, :destroy]
 
   def index
-    @reminders = Reminder.all
-
-    render json: @reminders
+    if params[:user_id]
+      @reminder = Reminder.where(user_id: params[:user_id])
+    else
+      @reminder = Reminder.all
+    end
+    render json: @reminder
   end
 
   def show
@@ -15,7 +18,7 @@ class RemindersController < OpenReadController
   end
 
   def create
-    @reminder = current_user.reminders.new(reminder_params)
+    @reminder = current_user.reminders.create(reminder_params)
 
     if @reminder.save
       render json: @reminder, status: :created, location: @reminder
@@ -43,7 +46,7 @@ class RemindersController < OpenReadController
   end
 
   def reminder_params
-    params.require(:reminder).permit(:message, :send_date)
+    params.require(:reminder).permit(:message, :send_date, :user_id)
   end
 
   private :set_reminder, :reminder_params
