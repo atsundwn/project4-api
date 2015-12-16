@@ -6,7 +6,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :token, null: false, index: { unique: true }
       t.string :password_digest, null: false
       t.string :phone_number, null: false, index: { unique: true }
-      t.string :country_code, default: "1"
+      t.string :country_code, default: '1'
       t.string :authy_id
       t.integer :authy_status, default: 0, null: false
 
