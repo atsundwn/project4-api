@@ -27,6 +27,9 @@ gem 'authy'
 # Use Twilio
 gem 'twilio-ruby', '~> 4.2.1'
 
+# Use delayed_jobs
+gem 'delayed_job_active_record'
+
 group :development do
   # Use pry over irb for rails console
   gem 'pry-rails'
