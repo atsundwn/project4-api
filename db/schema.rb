@@ -27,15 +27,15 @@ ActiveRecord::Schema.define(version: 20151214145318) do
   add_index "reminders", ["user_id"], name: "index_reminders_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                       null: false
-    t.string   "token",                       null: false
-    t.string   "password_digest",             null: false
-    t.string   "phone_number",                null: false
-    t.string   "country_code"
+    t.string   "email",                         null: false
+    t.string   "token",                         null: false
+    t.string   "password_digest",               null: false
+    t.string   "phone_number",                  null: false
+    t.string   "country_code",    default: "1"
     t.string   "authy_id"
-    t.integer  "authy_status",    default: 0, null: false
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.integer  "authy_status",    default: 0,   null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
