@@ -51,6 +51,10 @@ GEM
     delayed_job_active_record (4.1.0)
       activerecord (>= 3.0, < 5)
       delayed_job (>= 3.0, < 5)
+    dotenv (2.0.2)
+    dotenv-rails (2.0.2)
+      dotenv (= 2.0.2)
+      railties (~> 4.0)
     erubis (2.7.0)
     excon (0.45.4)
     globalid (0.3.6)
@@ -146,6 +150,7 @@ DEPENDENCIES
   byebug
   daemons
   delayed_job_active_record
+  dotenv-rails
   pg
   pry-rails
   rack-cors
