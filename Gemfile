@@ -30,6 +30,12 @@ gem 'twilio-ruby', '~> 4.2.1'
 # Use delayed_jobs
 gem 'delayed_job_active_record'
 
+# Need daemons to start delayed_job
+gem 'daemons'
+
+# Use workless to use less workers on heroku
+gem "workless"
+
 group :development do
   # Use pry over irb for rails console
   gem 'pry-rails'
