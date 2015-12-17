@@ -42,3 +42,9 @@ group :development do
   gem 'byebug'
   gem 'dotenv-rails'
 end
+
+group :production do
+     gem 'rails_12factor'
+     gem 'puma'
+end
+
