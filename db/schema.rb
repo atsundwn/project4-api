@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20151216214107) do
   create_table "reminders", force: :cascade do |t|
     t.string   "message",                    null: false
     t.string   "send_date",                  null: false
-    t.boolean  "sent?",      default: false
+    t.boolean  "sent",       default: false
     t.integer  "user_id"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false

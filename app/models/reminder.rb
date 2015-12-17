@@ -16,10 +16,17 @@ class Reminder < ActiveRecord::Base
       body: self.message
     )
     puts message.to
+    update(sent: true)
   end
 
   def when_to_run
-    Time.new + self.send_date.to_i.seconds
+    year = send_date.split(' ')[0].split('-')[2].to_i
+    month = send_date.split(' ')[0].split('-')[0].to_i
+    day = send_date.split(' ')[0].split('-')[1].to_i
+    hour = send_date.split(' ')[1].split(':')[0].to_i
+    minute = send_date.split(' ')[1].split(':')[1].to_i
+
+    Time.new(year, month, day, hour, minute)
   end
 
   handle_asynchronously :send_sms, run_at: proc { |i| i.when_to_run }

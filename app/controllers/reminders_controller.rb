@@ -46,7 +46,7 @@ class RemindersController < OpenReadController
   end
 
   def reminder_params
-    params.require(:reminder).permit(:message, :send_date, :sent?)
+    params.require(:reminder).permit(:message, :send_date, :sent)
   end
 
   private :set_reminder, :reminder_params
