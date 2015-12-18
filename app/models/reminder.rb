@@ -26,7 +26,10 @@ class Reminder < ActiveRecord::Base
     hour = send_date.split(' ')[1].split(':')[0].to_i
     minute = send_date.split(' ')[1].split(':')[1].to_i
 
-    hour -= 5 if hour >= 19
+    if hour >= 19
+      hour -= 24
+      day += 1
+    end
 
     Time.new(year, month, day, hour + 5, minute)
   end
