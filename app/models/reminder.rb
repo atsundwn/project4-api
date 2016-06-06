@@ -31,7 +31,7 @@ class Reminder < ActiveRecord::Base
       day += 1
     end
 
-    Time.new(year, month, day, hour + 6, minute)
+    Time.new(year, month, day, hour + 4, minute)
   end
 
   handle_asynchronously :send_sms, run_at: proc { |i| i.when_to_run }
